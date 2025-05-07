@@ -34,5 +34,26 @@ namespace TP6_GRUPO_24
             gvProductos.PageIndex = e.NewPageIndex;  // Evento para paginar la grilla de a 10 filas.
             cargarGridview();
         }
+
+        protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string idProducto = ((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_it_idProducto")).Text;
+            Producto producto = new Producto(Convert.ToInt32(idProducto));
+
+            GestionProductos gestionProductos = new GestionProductos();
+
+            int result = gestionProductos.EliminarProducto(producto);
+            if (result > 0)
+            {
+                lblResult.ForeColor = System.Drawing.Color.Green;
+                lblResult.Text = "el producto se ah eliminado con exito";
+                cargarGridview();
+            }
+            else {
+                lblResult.ForeColor = System.Drawing.Color.Red;
+                lblResult.Text = "ocurrio un error al eliminar el producto";
+            }
+            
+        }
     }
 }
