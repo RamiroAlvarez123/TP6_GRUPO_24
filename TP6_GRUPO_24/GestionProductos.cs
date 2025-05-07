@@ -18,5 +18,21 @@ namespace TP6_GRUPO_24
             string nombreTabla = "Productos";
             return conexion.ObtenerTablas(consultaSQL, nombreTabla);
         }
+
+        private void ParametrosEliminar(ref SqlCommand comando, Producto producto)
+        {
+            SqlParameter sqlParameter = new SqlParameter();
+            sqlParameter = comando.Parameters.Add("@idProducto", SqlDbType.Int);
+            sqlParameter.Value = producto.IdProducto;
+        }
+        public int EliminarProducto(Producto producto)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            ParametrosEliminar(ref sqlCommand, producto);
+            Conexion conexion = new Conexion();
+            string consultaSQL = "DELETE FROM Productos WHERE idProducto = @idProducto";
+            int filas = conexion.EjecutarConsulta(sqlCommand, consultaSQL);
+            return filas;
+        }
     }
 }

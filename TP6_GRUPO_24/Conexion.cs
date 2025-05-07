@@ -11,11 +11,11 @@ namespace TP6_GRUPO_24
     public class Conexion
     {
         // Ruta Gabriel: @"Data Source=MOSTRADOR-PC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
-        // Ruta Ramiro: 
+        // Ruta Ramiro: @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
         // Ruta que pide el TP: @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno; Integrated Security = True";
-        
-        private const string connectionString = @"Data Source=MOSTRADOR-PC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
-        
+
+        private const string connectionString = @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+
         public SqlConnection ObtenerConexion()  // Metodo simple para obtener la conexion a SQL.
         {
             SqlConnection conexion = new SqlConnection(connectionString);
@@ -41,6 +41,22 @@ namespace TP6_GRUPO_24
             {
                 return null;  // Manejo sencillo de excepciones con try-catch.
             }
+        }
+
+        public int EjecutarConsulta(SqlCommand comando, string consultaSQL)
+        {
+            int result;
+            SqlConnection Conexion = ObtenerConexion();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand = comando;
+            sqlCommand.Connection = Conexion;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = consultaSQL;
+            result = sqlCommand.ExecuteNonQuery();
+            Conexion.Close();
+
+            return result;
+
         }
 
     }
