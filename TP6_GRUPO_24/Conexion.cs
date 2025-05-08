@@ -14,7 +14,7 @@ namespace TP6_GRUPO_24
         // Ruta Ramiro: @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
         // Ruta que pide el TP: @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno; Integrated Security = True";
 
-        private const string connectionString = @"Data Source=MOSTRADOR-PC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+        private const string connectionString = @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
 
         public SqlConnection ObtenerConexion()  // Metodo simple para obtener la conexion a SQL.
         {

@@ -59,7 +59,7 @@ namespace TP6_GRUPO_24
             SqlCommand sqlCommand = new SqlCommand();
             ParametrosEditar(ref sqlCommand, producto);
             Conexion conexion = new Conexion();
-            string consultaSQL = "UPDATE Productos SET NombreProducto = @NombreProducto, CantidadPorUnidad = @CantidadPorUnidad, PrecioUnidad = @PrecioUnidad WHERE IdProducto = @idProducto"; 
+            string consultaSQL = "UPDATE Productos SET NombreProducto = @NombreProducto, CantidadPorUnidad = @CantidadPorUnidad, PrecioUnidad = @PrecioUnidad WHERE IdProducto = @idProducto";
             int filas = conexion.EjecutarConsulta(sqlCommand, consultaSQL);
             if (filas == 1)
             {

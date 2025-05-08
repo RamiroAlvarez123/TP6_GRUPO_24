@@ -9,8 +9,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        
+           <h2> <asp:Label ID="Label1" runat="server" Text="INICIO"></asp:Label> </h2>
+        
+           <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
+        <br />
+        <asp:LinkButton ID="LinkButton1" runat="server">Eliminar Productos seleccionados</asp:LinkButton>
+        <br />
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/MostrarProductos.aspx">Mostrar Productos</asp:HyperLink>
+        
     </form>
 </body>
 </html>
