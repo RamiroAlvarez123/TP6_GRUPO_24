@@ -14,9 +14,13 @@
         
            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SeleccionarProductos.aspx">Seleccionar Productos</asp:HyperLink>
         <br />
-        <asp:LinkButton ID="LinkButton1" runat="server">Eliminar Productos seleccionados</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Eliminar Productos seleccionados</asp:LinkButton>
         <br />
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/MostrarProductos.aspx">Mostrar Productos</asp:HyperLink>
+        
+           <p>
+               <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+           </p>
         
     </form>
 </body>

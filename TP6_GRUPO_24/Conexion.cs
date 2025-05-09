@@ -9,13 +9,10 @@ using System.Data;
 namespace TP6_GRUPO_24
 {
     public class Conexion
-    {
-        // Ruta Gabriel: @"Data Source=MOSTRADOR-PC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
-        // Ruta Ramiro: @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
-        // Ruta que pide el TP: @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno; Integrated Security = True";
-
-        private const string connectionString = @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
-
+    {       
+        //private const string connectionString = @"Data Source=DESKTOP-9AUAVE3\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+        private const string connectionString = @"Data Source=MOSTRADOR-PC\SQLEXPRESS;Initial Catalog=Neptuno;Integrated Security=True";
+        //private const string connectionString = @"Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno; Integrated Security = True";
         public SqlConnection ObtenerConexion()  // Metodo simple para obtener la conexion a SQL.
         {
             SqlConnection conexion = new SqlConnection(connectionString);
@@ -29,7 +26,7 @@ namespace TP6_GRUPO_24
             try
             {
 
-            using (SqlConnection conn = this.ObtenerConexion())  // Usamos lo de arriba, con this, para que no sea redundante.
+            using (SqlConnection conn = this.ObtenerConexion())  
             {
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(consultaSQL, conn); // Usar DataAdapter + DataSet para cargas simples.
                 DataSet dataTable = new DataSet();
@@ -39,7 +36,7 @@ namespace TP6_GRUPO_24
             }
             catch (Exception ex)
             {
-                return null;  // Manejo sencillo de excepciones con try-catch.
+                return null;  
             }
         }
 
