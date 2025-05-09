@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+using System.Drawing;
 namespace TP6_GRUPO_24
 {
     public partial class MostrarProductos : System.Web.UI.Page
@@ -17,6 +17,11 @@ namespace TP6_GRUPO_24
             {
                 gvProductos.DataSource = (DataTable)Session["tabla"];
                 gvProductos.DataBind();
+            }
+            else
+            {
+                lblMensaje.Text = "No hay productos seleccionados";  // g.
+                lblMensaje.ForeColor = Color.Red;
             }
         }
 

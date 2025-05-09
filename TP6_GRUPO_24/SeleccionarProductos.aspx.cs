@@ -34,7 +34,6 @@ namespace TP6_GRUPO_24
             string cantidadPorUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_CantidadPorUnidad")).Text;
             string precioPorUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_it_PrecioUnidad")).Text;
 
-            lblProducto.Text = "Productos agregados: " + nombre;
 
             Producto producto = new Producto(Convert.ToInt32(idProducto), nombre, cantidadPorUnidad, Convert.ToDecimal(precioPorUnidad));
             
@@ -45,7 +44,27 @@ namespace TP6_GRUPO_24
                 Session["tabla"] = crearTabla();
             }
 
+            DataTable tabla = (DataTable)Session["tabla"];
+            bool productoRepetido = false;
+            foreach(DataRow row in tabla.Rows) // Evitar repeticiones de productos.
+            {
+                if(row["IdProducto"].ToString() == producto.IdProducto.ToString())
+                {
+                    productoRepetido = true;
+                    break;
+                }
+            }
+            
+            if (!productoRepetido) {  // g.
+            lblProducto.Text = "Producto agregado: " + nombre;
+            lblProducto.ForeColor = System.Drawing.Color.Green;
             agregarFila((DataTable)Session["tabla"], producto);
+            }
+            else
+            {
+                lblProducto.Text = "El producto ya ha sido agregado.";
+                lblProducto.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private DataTable crearTabla()
