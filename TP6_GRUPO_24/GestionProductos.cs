@@ -31,7 +31,7 @@ namespace TP6_GRUPO_24
             sqlParameter.Value = producto.IdProducto;
         }
 
-        private void ParametrosEditar(ref SqlCommand comando, Producto producto) // g.
+        private void ParametrosEditar(ref SqlCommand comando, Producto producto) 
         {
             SqlParameter sqlParameter = new SqlParameter();
             sqlParameter = comando.Parameters.Add("@idProducto", SqlDbType.Int); // datos sql.
