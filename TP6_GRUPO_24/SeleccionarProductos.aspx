@@ -51,7 +51,7 @@
         
     <asp:Label ID="lblProducto" runat="server" Text=""></asp:Label>
         <br />
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver al Inicio</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver a Inicio</asp:HyperLink>
         
     </form>
     </body>
