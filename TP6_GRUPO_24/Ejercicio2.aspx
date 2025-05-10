@@ -20,7 +20,12 @@
         
            <p>
                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+               
            </p>
+        <br />
+<br />
+<br />
+<asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/PaginaInicio.aspx">Volver a la pagina de inicio</asp:HyperLink>
         
     </form>
 </body>

@@ -59,6 +59,9 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
         <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+        <br />
+        <br />
+           <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/PaginaInicio.aspx">Volver a la pagina de Inicio</asp:HyperLink>
     </form>
 </body>
 </html>

@@ -50,7 +50,7 @@
 </asp:GridView>
         <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                 <p>
-                    <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver Al Inicio</asp:HyperLink>
+                    <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Ejercicio2.aspx">Volver a Inicio</asp:HyperLink>
                 </p>
     </form>
 </body>
