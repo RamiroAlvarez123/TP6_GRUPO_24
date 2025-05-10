@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-                <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="14">
+                <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnPageIndexChanging="gvProductos_PageIndexChanging">
     <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:TemplateField HeaderText="Id Producto">

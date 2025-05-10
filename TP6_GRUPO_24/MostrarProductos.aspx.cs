@@ -25,6 +25,14 @@ namespace TP6_GRUPO_24
             }
         }
 
-
+        protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+         gvProductos.PageIndex = e.NewPageIndex;  // Evento para paginar la grilla de a 10 filas.
+            if (Session["tabla"] != null)
+            {
+                gvProductos.DataSource = (DataTable)Session["tabla"];
+                gvProductos.DataBind();
+            }
+        }
     }
 }
